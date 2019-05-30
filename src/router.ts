@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
-import LaayoutSidebar from './views/LaayoutSidebar.vue';
+import LayoutSidebar from './views/LayoutSidebar.vue';
 
 Vue.use(Router);
 
@@ -23,8 +23,8 @@ export default new Router({
 		},
 		{
 			path: '/layout-sidebar',
-			name: 'labor-sidebar',
-			component: LaayoutSidebar,
+			name: 'layout-sidebar',
+			component: LayoutSidebar,
 		},
 	],
 });

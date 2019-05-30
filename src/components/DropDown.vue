@@ -8,7 +8,6 @@
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
 import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
-import ITodo from '@/models/ITodo';
 
 @Component({
 	components: {
@@ -18,16 +17,16 @@ import ITodo from '@/models/ITodo';
 export default class DropDown extends Vue {
 	public selected: string = '';
 
-	public selectedItem: ITodo = {
-		userId: 0,
-		id: 0,
-		title: '',
-		completed: false,
-	};
+	// public selectedItem: ITodo = {
+	// 	userId: 0,
+	// 	id: 0,
+	// 	title: '',
+	// 	completed: false,
+	// };
 	@Prop() public items!: any[];
 
-	onChange(event: Event) {
-		this.$emit('selectionMade', this.selectedItem);
+	public onChange(event: Event) {
+		this.$emit('selectionMade', null);
 	}
 }
 </script>
