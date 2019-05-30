@@ -2,6 +2,8 @@
 	<div class="layout-sidebar">
 		<section class="sidebar">
 			<DropDownCheckbox label="Fruit" :items="fruitItems" @onSelectedItemsChanged="setSelectedFruits"/>
+			<DropDownCheckbox label="Fruit" :items="fruitItems" @onSelectedItemsChanged="setSelectedFruits"/>
+			<DropDownCheckbox label="Fruit" :items="fruitItems" @onSelectedItemsChanged="setSelectedFruits"/>
 		</section>
 		<section class="content"></section>
 
@@ -52,7 +54,7 @@ export default class LayoutSideBar extends Vue {
 
 	display: flex;
 	.sidebar {
-		width: 10rem;
+		width: 14rem;
 		border: 1px solid red;
 		padding: 1rem;
 	}
