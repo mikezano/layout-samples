@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
-import LaborConstraints from './views/LaborConstraints.vue';
+import LaayoutSidebar from './views/LaayoutSidebar.vue';
 
 Vue.use(Router);
 
@@ -22,9 +22,9 @@ export default new Router({
 				import(/* webpackChunkName: "about" */ './views/About.vue'),
 		},
 		{
-			path: '/labor-constraints',
-			name: 'labor-constraints',
-			component: LaborConstraints,
+			path: '/layout-sidebar',
+			name: 'labor-sidebar',
+			component: LaayoutSidebar,
 		},
 	],
 });
