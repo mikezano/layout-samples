@@ -40,9 +40,24 @@ export default class DropDown extends Vue {
 
 	@Prop() public label!: string;
 	@Prop() public items!: IDropDownItem[];
+	private app: HTMLElement | null = null;
 
+	public mounted() {
+		this.app = document.getElementById('app');
+	}
 	public toggleList() {
 		this.isShowing = !this.isShowing;
+
+		if (this.isShowing) {
+			this.app!.addEventListener('click', this.closeDropDown, {
+				capture: true,
+			});
+		}
+	}
+
+	public closeDropDown() {
+		this.isShowing = false;
+		this.app!.removeEventListener('click', this.closeDropDown);
 	}
 
 	public toggleOption(event: Event) {
@@ -60,24 +75,6 @@ export default class DropDown extends Vue {
 
 		this.$emit('onSelectedItemsChanged', this.selectedItems);
 	}
-
-	// public mounted(): void {
-	// 	this.app = document.getElementById('app');
-	// }
-
-	// 	public toggleSideMenu() {
-	// 	this.isShowingSideMenu = !this.isShowingSideMenu;
-
-	// 	if (this.isShowingSideMenu === true) {
-	// 		this.app!.addEventListener('click', this.closeSideMenu, {
-	// 			capture: true,
-	// 		});
-	// 	}
-	// }
-	// public closeSideMenu() {
-	// 	this.isShowingSideMenu = false;
-	// 	this.app!.removeEventListener('click', this.closeSideMenu);
-	// }
 }
 </script>
 
@@ -88,12 +85,13 @@ export default class DropDown extends Vue {
 }
 .fade-enter,
 .fade-leave-to {
-	opacity: 0;
+	//opacity: 0;
 	height: 0;
 }
 .fade-enter-to,
 .fade-leave {
-	opacity: 1;
+	//opacity: 1;
+	height: auto;
 }
 
 .dropdown {
