@@ -60,6 +60,24 @@ export default class DropDown extends Vue {
 
 		this.$emit('onSelectedItemsChanged', this.selectedItems);
 	}
+
+	// public mounted(): void {
+	// 	this.app = document.getElementById('app');
+	// }
+
+	// 	public toggleSideMenu() {
+	// 	this.isShowingSideMenu = !this.isShowingSideMenu;
+
+	// 	if (this.isShowingSideMenu === true) {
+	// 		this.app!.addEventListener('click', this.closeSideMenu, {
+	// 			capture: true,
+	// 		});
+	// 	}
+	// }
+	// public closeSideMenu() {
+	// 	this.isShowingSideMenu = false;
+	// 	this.app!.removeEventListener('click', this.closeSideMenu);
+	// }
 }
 </script>
 
