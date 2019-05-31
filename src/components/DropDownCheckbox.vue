@@ -15,8 +15,8 @@
 					class="dropdown__item"
 					:data-id="item.id"
 				>
-					<input type="checkbox" :id="item.id" @change="toggleOption($event)">
-					<label :for="item.id">{{item.name}}</label>
+					<input type="checkbox" :id="item.name">
+					<label :for="item.name">{{item.name}}</label>
 				</li>
 			</ul>
 		</transition>
@@ -55,9 +55,14 @@ export default class DropDown extends Vue {
 		}
 	}
 
-	public closeDropDown() {
-		this.isShowing = false;
-		this.app!.removeEventListener('click', this.closeDropDown);
+	public closeDropDown(event: Event) {
+		const element: HTMLElement = event.target as HTMLElement;
+		const itemElement = element.closest('.dropdown__item');
+
+		if (itemElement == null) {
+			this.isShowing = false;
+			this.app!.removeEventListener('click', this.closeDropDown);
+		}
 	}
 
 	public toggleOption(event: Event) {
@@ -149,6 +154,7 @@ export default class DropDown extends Vue {
 		text-overflow: ellipsis;
 		overflow: hidden;
 		padding: ($padding-size / 2) 0;
+		height: 1rem;
 	}
 	&__item:hover {
 		background-color: darken($color, 6%);

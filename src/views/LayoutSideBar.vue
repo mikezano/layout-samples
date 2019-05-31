@@ -2,8 +2,6 @@
 	<div class="layout-sidebar">
 		<section class="sidebar">
 			<DropDownCheckbox label="Fruit" :items="fruitItems" @onSelectedItemsChanged="setSelectedFruits"/>
-			<DropDownCheckbox label="Fruit" :items="fruitItems" @onSelectedItemsChanged="setSelectedFruits"/>
-			<DropDownCheckbox label="Fruit" :items="fruitItems" @onSelectedItemsChanged="setSelectedFruits"/>
 		</section>
 		<section class="content"></section>
 
